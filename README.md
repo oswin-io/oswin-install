@@ -5,7 +5,7 @@ separately; no application credentials or customer data are stored here.
 
 ## Install the current staging candidate
 
-Prerequisites: Linux x86-64 or arm64, Docker Engine 24+, Docker Compose v2, curl and OpenSSL. Point the selected DNS
+Prerequisites: Linux x86-64, Docker Engine 24+, Docker Compose v2, curl and OpenSSL. Point the selected DNS
 name to the server and allow inbound TCP ports 80 and 443 before installation.
 
 ```bash
@@ -15,8 +15,8 @@ curl -fsSL https://github.com/oswin-io/oswin-install/releases/download/v0.1.0-al
   --admin-email admin@example.com
 ```
 
-The bootstrap downloads the matching installer archive and checksum. The archive contains the exact immutable GHCR
-image digest produced by the release build.
+The bootstrap downloads the matching installer and Docker image archives, verifies both checksums, loads the image and
+pins its immutable local content ID.
 
 ## Release status
 
